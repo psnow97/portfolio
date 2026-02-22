@@ -1,0 +1,127 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Your Name — UX Design Consultant",
+  description = "Portfolio of UX strategy, service design, and research work.",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-stone-950 text-stone-200 font-sans antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-amber-400 focus:text-stone-950 focus:px-4 focus:py-2 focus:text-sm focus:font-mono focus:font-medium">Skip to main content</a>
+    <header class="sticky top-0 z-40 border-b border-stone-800 bg-stone-950/90 backdrop-blur-sm">
+      <div class="mx-auto max-w-5xl px-4 md:px-6">
+        <div class="flex h-16 items-center justify-between">
+          <a href="/" class="font-display text-lg text-stone-100 hover:text-amber-400 transition-colors duration-200">Your Name</a>
+          <nav aria-label="Primary navigation" class="hidden md:block">
+            <ul class="flex items-center gap-8" role="list">
+              {navLinks.map(({ href, label }) => {
+                const isActive = href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+                return (
+                  <li>
+                    <a href={href} aria-current={isActive ? "page" : undefined} class={`text-sm font-mono tracking-wide transition-colors duration-200 ${isActive ? "text-amber-400" : "text-stone-400 hover:text-stone-100"}`}>
+                      {label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+          <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu" class="md:hidden p-2 text-stone-400 hover:text-stone-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded">
+            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" class="hidden"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-stone-800">
+        <nav>
+          <ul class="flex flex-col px-4 py-4 gap-1" role="list">
+            {navLinks.map(({ href, label }) => {
+              const isActive = href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+              return (
+                <li>
+                  <a href={href} aria-current={isActive ? "page" : undefined} class={`block py-3 text-sm font-mono tracking-wide transition-colors duration-200 ${isActive ? "text-amber-400" : "text-stone-400 hover:text-stone-100"}`}>
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content" class="scroll-mt-16 min-h-screen">
+      <slot />
+    </main>
+    <footer class="border-t border-stone-800 mt-24">
+      <div class="mx-auto max-w-5xl px-4 md:px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <p class="font-display text-stone-100">Your Name</p>
+          <p class="text-sm text-stone-500 mt-1 font-mono">UX Design Consultant · Deloitte · Montréal</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <ul class="flex items-center gap-6" role="list">
+            <li><a href="mailto:your@email.com" class="text-sm text-stone-400 hover:text-stone-100 transition-colors font-mono">Email</a></li>
+            <li><a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="text-sm text-stone-400 hover:text-stone-100 transition-colors font-mono">LinkedIn</a></li>
+            <li><a href="https://github.com/yourhandle" target="_blank" rel="noopener noreferrer" class="text-sm text-stone-400 hover:text-stone-100 transition-colors font-mono">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.getElementById("nav-toggle");
+      const menu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!isOpen));
+          menu.classList.toggle("hidden");
+          iconOpen?.classList.toggle("hidden");
+          iconClose?.classList.toggle("hidden");
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+            toggle.setAttribute("aria-expanded", "false");
+            menu.classList.add("hidden");
+            iconOpen?.classList.remove("hidden");
+            iconClose?.classList.add("hidden");
+            toggle.focus();
+          }
+        });
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            toggle.setAttribute("aria-expanded", "false");
+            menu.classList.add("hidden");
+            iconOpen?.classList.remove("hidden");
+            iconClose?.classList.add("hidden");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,17 +1,22 @@
 ---
-import '../styles/global.css'
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-4xl font-bold text-blue-500">Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <div class="mx-auto max-w-5xl px-4 md:px-6 py-24 md:py-36">
+    <p class="text-xs font-mono text-amber-400 tracking-widest uppercase mb-6">
+      UX Design Consultant · Deloitte
+    </p>
+    <h1 class="font-display text-5xl md:text-7xl text-stone-100 leading-tight max-w-3xl mb-8">
+      Designing systems people can actually use.
+    </h1>
+    <p class="text-lg text-stone-400 max-w-xl leading-relaxed mb-12">
+      I work at the intersection of research, service design, and systems
+      thinking — primarily in enterprise and public sector contexts.
+    </p>
+    <a href="/work" class="inline-flex items-center gap-2 text-sm font-mono text-stone-100 border border-stone-700 px-5 py-3 hover:border-amber-400 hover:text-amber-400 transition-colors duration-200">
+      View case studies
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</MainLayout>
