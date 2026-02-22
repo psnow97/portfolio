@@ -2,87 +2,90 @@
 title: "Redesigning Global Navigation Architecture for a Multi-Segment Financial Platform"
 slug: "project-1"
 role: "Lead User Researcher"
-org: "Manulife (via Deloitte)"
-timeline: "2023 — 2024 (~3–4 months)"
-team: "Lead UX Researcher + 1–2 UX designers + AEM component owners + product owners across 6–11 product lines"
-tools: ["Card Sorting", "Tree Testing", "Moderated Usability Testing", "Miro", "Figma", "Adobe Experience Manager"]
+org: "Manulife Global Wealth & Asset Management (via Deloitte)"
+timeline: "Nov 2024 — Feb 2025 (12-week engagement)"
+team: "Lead UX Researcher + 1–2 UX/UI designers + AEM architect + design system lead + product owners across 11 product lines"
+tools: ["Card Sorting", "Tree Testing", "Moderated Usability Testing", "Miro", "Figma", "Adobe Experience Manager (AEM)"]
 tags: ["Information Architecture", "Research", "Systems Thinking", "Enterprise UX", "Accessibility"]
-impactHeadline: "Reframed a surface-level IA cleanup into a persona-driven architecture redesign — validated across ~30–40 participants — that reduced task path depth and improved success rates for complex cross-product navigation."
-angle: "Structural problem diagnosis + research-validated architecture under enterprise implementation constraints"
+impactHeadline: "Reframed a surface-level IA cleanup into a validated persona-driven navigation architecture — tested across 13 participants across 3 concepts — that became the implementation blueprint for consolidating 11 websites serving 4 distinct audience segments."
+angle: "Problem diagnosis + research-validated architecture under real enterprise implementation constraints"
 ---
 
 ## TL;DR
 
-Manulife's Global Wealth & Asset Management division had 11 product areas serving 4 distinct audience types — institutional partners, financial advisors, individual investors, and internal staff — all forced through the same navigation model. I identified that the problem wasn't labeling or grouping: it was structural. A single universal IA couldn't serve these segments without systematic friction. I pushed to abandon the "simplify and clean up" mandate, reframe the problem as an audience intent mismatch, and validate a persona-driven navigation architecture across card sorting, tree testing, and moderated prototype sessions — within AEM implementation constraints. The validated model was signed off and moved into implementation planning.
+Manulife's Global Wealth & Asset Management division ran 11 disconnected product websites serving 4 fundamentally different audience types — institutional partners, financial advisors, individual investors, and internal staff — all forced through the same navigation model. The original mandate was to simplify and clean up the IA. I challenged that framing before research began: the problem wasn't labeling, it was structural. A single universal navigation couldn't serve these segments without systematic failure. I pushed to test three distinct navigation architectures in parallel — including a persona-driven concept that eliminated the side navigation entirely — and ran card sorting and moderated prototype sessions across 13 participants to find which model actually performed. The persona-driven concept ranked highest across both investor and professional segments. It became the implementation blueprint, with IA site maps, hi-fi prototypes, and a governance framework delivered to the product team.
 
 ---
 
 ## Context
 
-- Manulife GWAM manages 11 discrete product areas: Agriculture & Forestry, Private Wealth, Retirement Plans, Institutional Investing, Advisory Dashboard, and more
-- Four structurally distinct user segments with conflicting navigation needs and mental models
+- Manulife GWAM operated 11 discrete public websites: MIM Global, Canada Retail, Canada Retirement, Manulife Wealth, Manulife Private Wealth, US Retail (John Hancock), US Retirement (John Hancock), Institutional, UCITS Private Site, Real Estate Finance, Timber & Agriculture
+- Over 3,000 total domains across the global Manulife portfolio; 98% had low search authority — consolidation had SEO stakes, not just UX stakes
+- 8 of 61 prioritized domains required legal or regulatory separation — IA decisions had legal constraints, not just design ones
+- Four structurally distinct user segments with conflicting navigation needs and mental models: institutional partners, financial advisors (CA + US), individual investors (CA + US), internal staff
 - Implementation constrained to out-of-the-box Adobe Experience Manager (AEM) components — no custom navigation frameworks
-- Existing design system had been inconsistently applied across global service lines, adding visual and interaction fragmentation
-- No prior research existed to validate audience segmentation or validate navigation labeling across segments
-- Team operating inside a large enterprise environment, not a greenfield product context
+- Design system (Common Core) had been inconsistently applied across global service lines: naming conventions, token connections, and component states all misaligned
+- No prior research existed to validate IA structure, navigation labels, or persona segmentation for the consolidated platform
 
 ---
 
 ## Problem
 
-The existing IA operated on a flawed assumption: that a cleaned-up, simplified universal navigation could serve all four segments adequately.
+The existing IA operated on a flawed assumption: that a cleaner, simplified universal navigation could serve all four audience segments adequately.
 
-This assumption was wrong for a structural reason, not a cosmetic one. Each audience segment had fundamentally different:
-- **Entry intent**: institutional partners seek allocation data; individual investors seek account access; advisors seek product tools; staff seek internal operational content
-- **Mental models**: the same label ("Investments") maps to completely different product spaces depending on who's reading it
-- **Depth requirements**: institutional and advisor segments require hierarchical access to sub-products; retail investors need flat, task-oriented navigation
+This assumption failed for a structural reason, not a cosmetic one. Each segment had fundamentally different entry intent, mental models, and depth requirements:
+- Institutional partners seek allocation data and fund documentation — deep, hierarchical access
+- Financial advisors need product tools, sponsor portals, and compliance resources — segment-specific, not product-generic
+- Individual investors need plan access and account tools — flat, task-oriented
+- Internal staff need operational content that overlaps but doesn't belong in public navigation
 
-The consequence: a navigation model that worked for no one fully, forcing all segments to over-navigate or self-orient to find relevant content.
+Stakeholder interviews across all 11 product lines independently flagged navigation as their primary known user pain point. "Navigation is a significant pain point across websites and this applies across our GWAM ecosystem" — stakeholder synthesis, CX analysis sessions.
 
-**Stakes if unresolved**: continued navigation confusion across a high-stakes financial platform serving clients managing significant capital allocations; no scalable foundation for future product additions across 11 product areas.
+**Stakes**: A high-volume financial platform managing institutional and retail capital where misdirected users don't self-correct — they abandon or call support. Consolidating 11 websites without resolving the IA structure would reproduce the same failure at larger scale.
 
 ---
 
 ## What I Did
 
 - **Challenged the original mandate** ("clean up and simplify the IA") by identifying that the core problem was structural audience mismatch, not labeling inefficiency — reframing the project scope before research began
-- **Advocated for persona-segmented navigation testing** despite the added complexity and AEM implementation constraints, securing buy-in to run parallel navigation concepts rather than optimizing a single model
-- **Designed a multi-stage mixed-methods research program**: closed card sort (testing current labels) → open card sort (surfacing user-generated categories) → tree testing (validating 3 IA concepts on findability) → moderated prototype testing (qualitative + performance data on 3 navigation models)
-- **Translated open card sort findings** into 3 distinct global navigation prototypes, each with different audience segmentation logic — creating testable hypotheses rather than design preferences
-- **Ran tree testing** across key cross-product tasks to measure success rates and path efficiency across audience segments, with specific attention to complex multi-product scenarios
-- **Led moderated prototype sessions** combining task-based performance metrics with qualitative interview data to understand failure points and preference rationale
-- **Mapped AEM implementation constraints** throughout the design process, ensuring the recommended IA remained buildable with out-of-the-box components — preventing a technically elegant but unshippable recommendation
-- **Defined the persona-selection mechanism**: coach marks at entry, persona saved post-selection, content and navigation hierarchy adapted dynamically per segment
+- **Led CX discovery sessions** with product owners across all 11 GWAM websites, documenting purpose, primary users, key tasks, known pain points, and business metrics for each site — establishing the evidential baseline for the IA redesign
+- **Conducted a UX/UI audit** of navigation across all 11 sites using a structured heuristic framework across 4 categories (Navigation UI, Categorization & Labels, User Flows & Wayfinding, Search), producing a severity-rated assessment across each site
+- **Ran an open card sort (37 cards, 11 participants)** to surface user-generated categories and naming conventions — revealing 91% grouping agreement on the top mental model cluster, and six primary categories that became the foundation for the IA concepts
+- **Designed 3 parallel navigation architectures** to test competing structural hypotheses: Concept A (persona-based landing page + existing side nav), Concept B (product-based dropdown menus + side nav), Concept C (persona-driven dropdowns, side nav eliminated entirely)
+- **Ran moderated usability testing across 13 participants** (5 advisor proxies, 2 institutional proxies, 6 individual investors) testing 8 core tasks per concept: persona switching, LOB navigation, product finding, site orientation, language/country switching, and sign-in initiation
+- **Identified that coach marks failed** in testing — users dismissed them immediately or failed to understand their purpose — and pivoted the recommendation to entry modals, which tested significantly better; this was a documented reversal of the original design direction, not a preference
+- **Documented the AEM constraint boundary** throughout the design process, ensuring all three concepts remained buildable with out-of-the-box components — preventing technically elegant but unshippable recommendations
+- **Delivered the full workstream output**: Audit & Research Report, persona-based IA site maps for 5 audience segments, 3 hi-fi Figma prototypes, and a next-steps roadmap for taxonomy and deeper IA work
 
 ---
 
 ## Key Decisions & Tradeoffs
 
 **Chose reframing over optimization.**
-The pressure was to simplify the existing IA. I challenged that framing before research began, because optimizing a structurally flawed model would produce a cleaner version of the same failure. The cost: a longer research timeline and a more complex design deliverable.
+The pressure was to simplify the existing IA. I challenged that before research began, because optimizing a structurally flawed model produces a cleaner version of the same failure. Cost: longer timeline, more complex deliverables, harder stakeholder alignment. Benefit: a recommendation grounded in the actual problem rather than the originally stated one.
 
 **Chose to test 3 distinct concepts rather than iterate on 1.**
-Running parallel navigation concepts through tree testing increased research time and scope but produced comparative, evidence-based selection criteria. Without this, the recommendation would have been preference-based rather than performance-validated.
+Running parallel navigation architectures doubled the research load but produced comparative performance data instead of preference data. The study confirmed that Concept C outperformed alternatives — but also revealed that individual investors and financial professionals ranked options differently by a significant margin, a nuance that would have been invisible with a single-concept test.
 
-**Chose persona selection at entry, not inferred from behavior.**
-Behavioral inference (e.g., routing by login type or URL pattern) would have been less reliable and harder to implement in AEM. Explicit upfront persona selection introduced cognitive overhead for new users but eliminated routing errors for returning ones — a deliberate tradeoff favoring reliability over seamlessness.
+**Chose to eliminate the side navigation in the final recommendation.**
+Participants consistently described the side navigation as visually distracting and redundant with the dropdown menus. One participant: "This sidebar is meant to be helpful but it's just distracting... my eye is still being pulled over to this sidebar even though I'm trying to focus elsewhere." Removing it cleaned up the layout but required the dropdown architecture to carry more navigational weight — a tested, not aesthetic, tradeoff.
+
+**Chose modals over coach marks for persona selection — based on failure evidence.**
+Coach marks were the initial design direction. In testing, they were universally dismissed within seconds and failed to communicate their purpose. Entry modals tested substantially better. This was a research-driven reversal of an initial design assumption, documented in the study findings.
 
 **Constrained the architecture to AEM out-of-the-box components.**
-A more sophisticated dynamic navigation system was technically possible but would have required custom AEM development outside the project's implementation scope. Staying within AEM constraints meant a recommendation that could actually be built and maintained.
-
-**Deferred full global rollout from scope.**
-The validated IA moved into implementation planning rather than full deployment during my direct involvement. Framing this honestly — validated architecture handed off for implementation — preserves credibility and accurately represents the project's phase.
+A more sophisticated dynamic navigation system was technically possible but outside the AEM implementation scope. Staying within constraints meant a recommendation that content teams could actually build and maintain without custom development.
 
 ---
 
 ## Results
 
-- **~15–25% improvement in task success rates** on complex cross-product navigation tasks under the persona-driven model vs. the universal navigation model (tree testing data)
-- **~1–2 click reduction in path depth** for top tasks across institutional and advisor segments
-- **~20% reduction in time-on-task** for institutional and financial advisor segments in moderated prototype sessions
-- **Reduced misclicks noticeably** in high-density product categories (Agriculture & Forestry, Institutional Investing) where label overlap previously caused confusion
-- **3 navigation concepts evaluated, 1 validated and signed off** — moving into AEM implementation planning with design handoff artifacts (validated IA, labeling system, persona logic, navigation framework)
-- **Scalable foundation delivered**: persona-driven IA architecture designed to accommodate future product additions across 11+ product areas without requiring structural rework
+- **Concept C (persona-driven, no side nav) ranked highest overall** across 13 participants in usability testing; average CSAT scores above 7.5/10; ranked as top preference by the majority of both investor and professional participants
+- **91% grouping agreement** on the top mental model cluster from card sorting — providing strong validation for the persona-segment framing before prototype testing began
+- **Coach mark failure documented and reversed**: the original persona-selection mechanism was invalidated in testing; modal-based recommendation backed by direct observational evidence, not designer preference
+- **Breadcrumb requirement established from evidence**: users across all technological skill levels instinctively relied on breadcrumbs to orient and backtrack — a feature absent from all current GWAM sites, now in the implementation roadmap
+- **5 persona-segmented IA site maps delivered** (CA Investors, CA Advisors, CA+US Institutions, US Investors, US Advisors) — the architecture differentiates navigation structure by audience rather than applying a single global model
+- **Full workstream deliverables shipped**: Audit & Research Report, 3 hi-fi Figma prototypes, IA site maps, AEM constraint documentation, governance framework recommendations — handed off to the product team for implementation planning
 
 ---
 
@@ -90,31 +93,30 @@ The validated IA moved into implementation planning rather than full deployment 
 
 *(To be embedded during Day 8 component pass)*
 
-- `p1-01-ia-overview.webp` — High-level persona-driven IA structure diagram (before/after model)
-- `p1-02-research-pipeline.webp` — Card sort → tree test → prototype testing pipeline diagram
-- `p1-03-tree-test-results.webp` — Comparative task success rates across 3 navigation concepts
-- `p1-04-persona-nav-model.webp` — Persona selection model with coach marks + adaptive hierarchy
-- `p1-05-deck-ambitions.webp` — Project goals slide (existing artifact; use as evidence of scope)
+- `p1-01-ia-overview.webp` — Persona-based IA site map (CA Advisors or CA Investors structure)
+- `p1-02-concept-comparison.webp` — Concept A/B/C structure comparison and key attribute callouts
+- `p1-03-card-sort-output.webp` — Card sort grouping clusters and agreement levels
+- `p1-04-persona-nav-model.webp` — Entry modal + persona tabs mechanism from Concept C
+- `p1-05-rainbow-chart.webp` — UX assessment severity chart across all 11 GWAM sites
 
 ---
 
 ## What I'd Improve Next
 
-- **Heavier quantitative instrumentation from the start**: SUS scores and NPS-style confidence ratings in moderated sessions would have added empirical weight to the recommendation beyond task performance data alone — reducing how much the final selection depended on qualitative synthesis
-- **Longitudinal validation**: post-implementation analytics to confirm that the tree testing performance improvements translated to real-world navigation behavior under the live AEM experience
-- **Expand accessibility testing**: prototype sessions did not explicitly test with screen reader users or keyboard-only navigation, which is a gap in a financial services platform serving diverse populations
-- **Formalize the AEM constraint-mapping process**: I managed this informally throughout the project; a structured "feasibility review" checkpoint earlier would have caught edge cases faster and reduced late-stage scope adjustments
+- **Heavier quantitative instrumentation**: the study captured CSAT-derived preference rankings but not task-level success rates or error counts per concept — those metrics would have added more granular, defensible evidence for the performance difference between concepts
+- **Longitudinal validation**: post-implementation analytics to confirm prototype performance translates to real-world behavior once the AEM experience is live
+- **Explicit accessibility testing**: prototype sessions did not include screen reader users or keyboard-only navigation — a gap for a regulated financial platform serving diverse populations
+- **Taxonomy resolution before handoff**: the concept was validated, but label sets ("Solutions," "Resources," "About Us") remained contested at the stakeholder level and left as a next-phase item — resolving this during the research phase would have produced a cleaner, less ambiguous handoff artifact
 
 ---
 
 ## Meta Add-On
 
-**2 weak areas in the narrative:**
-1. The Results section leans on approximate ranges from memory, not a documented research report. This is defensible in conversation but vulnerable if someone asks for the source artifact. You need a framing line ready: "these are approximate ranges from research notes — I can speak to methodology in detail."
-2. The "Artifacts" section is entirely placeholders. Until those visuals exist, a reviewer can't verify the complexity you're describing. Priority asset: the before/after IA diagram and the tree testing comparison. Without those two, the case study is words only.
+**What changed in this revision (for your awareness):**
+The previous version included approximate performance ranges ("15–25% improvement in task success rates," "20% reduction in time-on-task") that don't appear in the source materials. Those have been removed. The actual quantitative evidence is the CSAT-derived preference ranking and 91% card sort agreement — real data, defensible from methodology. Made-up ranges are a liability in conversation.
 
-**1 potential overclaim:**
-"Scalable foundation delivered" reads as outcome language but the system hasn't been in production long enough to validate scalability. Safer: "designed to accommodate future product additions without structural rework" — which is what you actually delivered, not what it proved over time.
+**What's still weak:**
+Results are honest but less visually punchy without the fabricated numbers. The fix for that is visual: the Callout component (Day 8) should explicitly surface the coach mark → modal pivot. That single research-driven reversal — documented, observed, acted on — is a stronger senior signal than any performance stat.
 
-**1 suggestion to increase signal density:**
-Add a one-paragraph "Reframe moment" box (using your Callout component from Day 8) that explicitly shows the before/after of the problem framing: *"Original mandate: simplify the IA. Revised mandate: redesign the experience architecture around audience intent."* That single pivot is your sharpest senior signal — it's currently buried in the Actions section where most recruiters won't slow down enough to catch it.
+**The asset that would most strengthen this case study:**
+A before/after IA diagram: single universal navigation vs. persona-segmented architecture. Even an annotated screenshot from the deck frames the structural argument visually and makes the reframe concrete for a recruiter skimming the Results section.
