@@ -1,6 +1,5 @@
 ---
 title: "Defining the CX North Star for a Multi-Year Digital Modernization Program"
-slug: "project-2"
 role: "Lead User Researcher & UX Strategist"
 org: "Pacific Blue Cross (via Deloitte)"
 timeline: "2024 (~12-week foundational phase, multi-year program)"

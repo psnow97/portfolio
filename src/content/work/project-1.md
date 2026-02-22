@@ -1,6 +1,5 @@
 ---
 title: "Redesigning Global Navigation Architecture for a Multi-Segment Financial Platform"
-slug: "project-1"
 role: "Lead User Researcher"
 org: "Manulife Global Wealth & Asset Management (via Deloitte)"
 timeline: "Nov 2024 — Feb 2025 (12-week engagement)"
