@@ -1,6 +1,5 @@
 ---
 title: "Reframing Canada's Employment Insurance Modernization Through Generative Research"
-slug: "project-3"
 role: "Lead Generative Researcher (Pod Lead)"
 org: "Employment & Social Development Canada (via Deloitte)"
 timeline: "2024 (multi-month engagement)"
